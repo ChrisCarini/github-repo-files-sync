@@ -84,6 +84,9 @@ group:
       # JetBrains Plugin - Release
       - source: .github/workflows/jetbrains-release.yml
         dest: .github/workflows/release.yml
+      # JetBrains Plugin - Standard JetBrains build.gradle
+      - source: gradle/standard_jetbrains_plugin/build.gradle
+        dest: standard_jetbrains_plugin_build.gradle
     repos: |
       ChrisCarini/automatic-github-issue-navigation-configuration-jetbrains-plugin
       ChrisCarini/environment-variable-settings-summary-intellij-plugin
