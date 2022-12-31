@@ -22,7 +22,7 @@ jobs:
       # This first step will fail if there's no metadata and so subsequent actions will not occur.
       - name: Dependabot metadata
         id: dependabot-metadata
-        uses: dependabot/fetch-metadata@v1.3.6
+        uses: dependabot/fetch-metadata@5ef00187930bafb52d529e0b9c3dff045dfa9851 # v1.3.5
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
@@ -59,7 +59,7 @@ jobs:
 
       # Checkout repo; this is required so that we can checkout the PR URL below for approval.
       - name: Checkout Repo
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
 
       # Approve the PR if it has not already been approved.
       - name: Approve a PR if not already approved

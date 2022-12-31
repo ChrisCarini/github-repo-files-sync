@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
 
       - name: Run Repo File Sync Action
         id: repo-file-sync
@@ -53,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync Repo Settings - public
-        uses: kbrashears5/github-action-repo-settings-sync@2.0
+        uses: kbrashears5/github-action-repo-settings-sync@4e07e64f17de011ddf55a4a827428728cb7fcf87 # 2.0
         with:
           REPOSITORIES: |
             ChrisCarini/automatic-github-issue-navigation-configuration-jetbrains-plugin
@@ -96,7 +96,7 @@ jobs:
           TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
 
       - name: Sync Repo Settings - private
-        uses: kbrashears5/github-action-repo-settings-sync@2.0
+        uses: kbrashears5/github-action-repo-settings-sync@4e07e64f17de011ddf55a4a827428728cb7fcf87 # 2.0
         with:
           REPOSITORIES: |
             ChrisCarini/fitbit-data-extract
