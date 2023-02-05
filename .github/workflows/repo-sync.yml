@@ -48,111 +48,95 @@ jobs:
   #     SYNC REPO SETTINGS     #
   ##############################
   sync_repo_settings:
+    name: Repo Settings
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo:
+          # JetBrains Plugins
+          - ChrisCarini/automatic-github-issue-navigation-configuration-jetbrains-plugin
+          - ChrisCarini/environment-variable-settings-summary-intellij-plugin
+          - ChrisCarini/example-loc-plugin-config-plugin
+          - ChrisCarini/git-push-reminder-jetbrains-plugin
+          - ChrisCarini/intellij-code-exfiltration
+          - ChrisCarini/intellij-notification-sample
+          - ChrisCarini/iris-jetbrains-plugin
+          - ChrisCarini/jetbrains-auto-power-saver
+          - ChrisCarini/loc-change-count-detector-jetbrains-plugin
+          - ChrisCarini/logshipper-intellij-plugin
+          - ChrisCarini/sample-intellij-plugin
+          # Misc Repos
+          - ChrisCarini/github-repo-files-sync
+          - ChrisCarini/ieee-csdl-downloader
+          - ChrisCarini/jetbrains-ide-release-dates
+          - ChrisCarini/shodan-exposure-box
+          - ChrisCarini/trivia-box
+          - ChrisCarini/upptime
+          # Private Repos
+          - ChrisCarini/fitbit-data-extract
+          - ChrisCarini/jetbrains-sdk-cleaner
+
     steps:
-      - name: Sync Repo Settings - public - JetBrains Plugins
-        uses: ChrisCarini/github-repo-settings-sync-action@main
-        with:
-          REPOSITORIES: |
-            ChrisCarini/automatic-github-issue-navigation-configuration-jetbrains-plugin
-            ChrisCarini/environment-variable-settings-summary-intellij-plugin
-            ChrisCarini/example-loc-plugin-config-plugin
-            ChrisCarini/git-push-reminder-jetbrains-plugin
-            ChrisCarini/intellij-code-exfiltration
-            ChrisCarini/intellij-notification-sample
-            ChrisCarini/iris-jetbrains-plugin
-            ChrisCarini/jetbrains-auto-power-saver
-            ChrisCarini/loc-change-count-detector-jetbrains-plugin
-            ChrisCarini/logshipper-intellij-plugin
-            ChrisCarini/sample-intellij-plugin
-          ALLOW_ISSUES: 'true'
-          ALLOW_PROJECTS: 'true'
-          ALLOW_WIKI: 'true'
+      - name: Sync Repo Settings - ${{ matrix.repo }}
+        run: |
+          gh api /repos/${{ matrix.repo }} \
+            --method PATCH \
+            -H "Accept: application/vnd.github+json" \
+            -F has_issues=true \
+            -F has_projects=true \
+            -F has_wiki=$([[ "$(gh api /repos/${{ matrix.repo }} --jq '.private')" = true ]] && echo "false" || echo "true") \
+            -F allow_merge_commit=false \
+            -F allow_squash_merge=true \
+            -F allow_rebase_merge=false \
+            -F allow_auto_merge=$([[ "$(gh api /repos/${{ matrix.repo }} --jq '.private')" = true ]] && echo "false" || echo "true") \
+            -F delete_branch_on_merge=true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
 
-          MERGE_COMMIT: 'false'
-          SQUASH_MERGE: 'true'
-          REBASE_MERGE: 'false'
+  sync_repo_branch_protection_rules:
+    name: Branch Protection
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo:
+          - ChrisCarini/automatic-github-issue-navigation-configuration-jetbrains-plugin
+          - ChrisCarini/environment-variable-settings-summary-intellij-plugin
+          - ChrisCarini/example-loc-plugin-config-plugin
+          - ChrisCarini/git-push-reminder-jetbrains-plugin
+          - ChrisCarini/intellij-code-exfiltration
+          - ChrisCarini/intellij-notification-sample
+          - ChrisCarini/iris-jetbrains-plugin
+          - ChrisCarini/jetbrains-auto-power-saver
+          - ChrisCarini/loc-change-count-detector-jetbrains-plugin
+          - ChrisCarini/logshipper-intellij-plugin
+          - ChrisCarini/sample-intellij-plugin
 
-          AUTO_MERGE: 'true'
-
-          DELETE_HEAD: 'true'
-
-          BRANCH_PROTECTION_ENABLED: 'enabled'
-          BRANCH_PROTECTION_NAME: 'main'
-          BP_REQUIRED_STATUS_CHECKS: '{"strict": true, "checks": [{"context": "Build", "app_id": 15368}, {"context": "Gradle Wrapper", "app_id": 15368}, {"context": "Ensure plugin compatibility against targeted platform version & the latest EAP snapshot for both ...", "app_id": 15368}, {"context": "Test", "app_id": 15368}]}'
-          BP_REQUIRED_CONVO_RESOLUTION: 'true'
-          BP_REQUIRED_SIGNATURES: 'false'
-          BP_REQUIRED_LINEAR_HISTORY: 'true'
-          BP_LOCK_BRANCH: 'false'
-          BP_ENFORCE_ADMINS: 'true'
-          BP_ALLOW_FORCE_PUSHES: 'false'
-          BP_ALLOW_DELETIONS: 'false'
-          BP_BLOCK_CREATIONS: 'false'
-          BP_ALLOW_FORK_SYNCING: 'false'
-
-          TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
-
-      - name: Sync Repo Settings - public - other
-        uses: ChrisCarini/github-repo-settings-sync-action@main
-        with:
-          REPOSITORIES: |
-            ChrisCarini/github-repo-files-sync
-            ChrisCarini/ieee-csdl-downloader
-            ChrisCarini/jetbrains-ide-release-dates
-            ChrisCarini/shodan-exposure-box
-            ChrisCarini/trivia-box
-            ChrisCarini/upptime
-          ALLOW_ISSUES: 'true'
-          ALLOW_PROJECTS: 'true'
-          ALLOW_WIKI: 'true'
-
-          MERGE_COMMIT: 'false'
-          SQUASH_MERGE: 'true'
-          REBASE_MERGE: 'false'
-
-          AUTO_MERGE: 'true'
-
-          DELETE_HEAD: 'true'
-
-          BRANCH_PROTECTION_ENABLED: 'enabled'
-          BRANCH_PROTECTION_NAME: 'main'
-          BP_REQUIRED_STATUS_CHECKS: 'null'
-          BP_REQUIRED_CONVO_RESOLUTION: 'true'
-          BP_REQUIRED_SIGNATURES: 'false'
-          BP_REQUIRED_LINEAR_HISTORY: 'true'
-          BP_LOCK_BRANCH: 'false'
-          BP_ENFORCE_ADMINS: 'true'
-          BP_ALLOW_FORCE_PUSHES: 'false'
-          BP_ALLOW_DELETIONS: 'false'
-          BP_BLOCK_CREATIONS: 'false'
-          BP_ALLOW_FORK_SYNCING: 'false'
-
-          TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
-
-      - name: Sync Repo Settings - private
-        uses: kbrashears5/github-action-repo-settings-sync@4e07e64f17de011ddf55a4a827428728cb7fcf87 # 2.0
-        with:
-          REPOSITORIES: |
-            ChrisCarini/fitbit-data-extract
-            ChrisCarini/jetbrains-sdk-cleaner
-          ALLOW_WIKI: 'false' # This option is only available for public repos :(
-          ALLOW_ISSUES: 'true'
-          ALLOW_PROJECTS: 'true'
-
-          MERGE_COMMIT: 'false'
-          SQUASH_MERGE: 'true'
-          REBASE_MERGE: 'false'
-
-          AUTO_MERGE: 'false' # This option is only available for public repos :(
-
-          DELETE_HEAD: 'true'
-
-          # NOTE: The below is marked `UNCHANGED` and the remainder are commented because otherwise
-          # running this action will end up 'un-setting' the 'required status checks'. :(
-          BRANCH_PROTECTION_ENABLED: 'UNCHANGED'
-          #          BRANCH_PROTECTION_NAME: 'main'
-          #          BRANCH_PROTECTION_REQUIRED_REVIEWERS: '0'
-          #          BRANCH_PROTECTION_DISMISS: 'true'
-          #          BRANCH_PROTECTION_CODE_OWNERS: 'false'
-          #          BRANCH_PROTECTION_ENFORCE_ADMINS: 'false'
-          TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
+    steps:
+      - name: Branch Protection Rules - JetBrains Plugin - ${{ matrix.repo }}
+        run: |
+          cat <<EOM | gh api -X PUT --input - /repos/${{ matrix.repo }}/branches/main/protection
+          {
+            "required_pull_request_reviews": null,
+            "required_status_checks": {
+              "strict": true,
+              "checks": [
+                {"app_id": 15368, "context": "Build"},
+                {"app_id": 15368, "context": "Gradle Wrapper"},
+                {"app_id": 15368, "context": "Ensure plugin compatibility against targeted platform version & the latest EAP snapshot for both ..."},
+                {"app_id": 15368, "context": "Test"}
+              ]
+            },
+            "required_conversation_resolution": true,
+            "required_signatures": false,
+            "required_linear_history": true,
+            "lock_branch": false,
+            "enforce_admins": true,
+            "allow_force_pushes": false,
+            "allow_deletions": false,
+            "restrictions": null,
+            "block_creations": false,
+            "allow_fork_syncing": false
+          }
+          EOM
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
