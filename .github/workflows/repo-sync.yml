@@ -35,6 +35,7 @@ jobs:
           #   ChrisCarini
           PR_LABELS: |
             repo-file-sync
+          AUTO_MERGE_MERGE_METHOD: squash
           CONFIG_PATH: sync.yml
           GH_PAT: ${{ secrets.GH_PAT_REPO_WORKFLOW_SCOPE }}
 
