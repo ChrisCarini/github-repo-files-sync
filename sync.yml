@@ -108,3 +108,25 @@ group:
       ChrisCarini/jetbrains-sdk-cleaner
       ChrisCarini/loc-change-count-detector-jetbrains-plugin
       ChrisCarini/logshipper-intellij-plugin
+  ##################################################
+  #   JetBrains Plugin - OSSF Scorecard Analysis   #
+  ##################################################
+  - files:
+      # OSSF Scorecard Analysis
+      - source: github/workflows/scorecards-analysis.yml
+        dest: .github/workflows/scorecards-analysis.yml
+    # Place `ChrisCarini/sample-intellij-plugin` first as it is a test repo and typically we want to look at this PR first.
+    repos: |
+      ChrisCarini/sample-intellij-plugin
+      
+      ChrisCarini/automatic-github-issue-navigation-configuration-jetbrains-plugin
+      ChrisCarini/environment-variable-settings-summary-intellij-plugin
+      ChrisCarini/example-loc-plugin-config-plugin
+      ChrisCarini/git-push-reminder-jetbrains-plugin
+      ChrisCarini/intellij-code-exfiltration      
+      ChrisCarini/intellij-notification-sample
+      ChrisCarini/iris-jetbrains-plugin
+      ChrisCarini/jetbrains-auto-power-saver
+      ChrisCarini/jetbrains-sdk-cleaner
+      ChrisCarini/loc-change-count-detector-jetbrains-plugin
+      ChrisCarini/logshipper-intellij-plugin
