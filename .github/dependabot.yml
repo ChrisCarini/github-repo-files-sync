@@ -12,10 +12,6 @@ updates:
       - "merge when passing"  # This is a label that [Repo Ranger](https://github.com/apps/repo-ranger) will pickup and auto-merge when all GH checks pass.
     reviewers:
       - ChrisCarini
-    ignore:
-      - dependency-name: "org.jetbrains.changelog:org.jetbrains.changelog.gradle.plugin"
-        # For `org.jetbrains.changelog:org.jetbrains.changelog.gradle.plugin`, ignore `2.x` until https://github.com/JetBrains/gradle-changelog-plugin/issues/149 is resolved.
-        versions: [ "2.x" ]
 
   # Maintain dependencies for GitHub Actions (for **other** repos' workflow files)
   - package-ecosystem: "github-actions"
