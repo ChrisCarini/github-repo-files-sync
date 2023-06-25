@@ -78,6 +78,9 @@ group:
   #   JetBrains Plugin - Build & Release   #
   ##########################################
   - files:
+      # JetBrains Plugin - Files Changed
+      - source: github/workflows/jetbrains-files-changed.yaml
+        dest: .github/workflows/files-changed.yaml
       # JetBrains Plugin - Build + Release Draft
       - source: github/workflows/jetbrains-build.yml
         dest: .github/workflows/build.yml
