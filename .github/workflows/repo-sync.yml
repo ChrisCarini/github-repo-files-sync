@@ -63,6 +63,7 @@ jobs:
           - ChrisCarini/intellij-notification-sample
           - ChrisCarini/iris-jetbrains-plugin
           - ChrisCarini/jetbrains-auto-power-saver
+          - ChrisCarini/jetbrains-sdk-cleaner
           - ChrisCarini/loc-change-count-detector-jetbrains-plugin
           - ChrisCarini/logshipper-intellij-plugin
           - ChrisCarini/sample-intellij-plugin
@@ -75,7 +76,6 @@ jobs:
           - ChrisCarini/upptime
           # Private Repos
           - ChrisCarini/fitbit-data-extract
-          - ChrisCarini/jetbrains-sdk-cleaner
 
     steps:
       - name: Sync Repo Settings - ${{ matrix.repo }}
@@ -108,6 +108,7 @@ jobs:
           - ChrisCarini/intellij-notification-sample
           - ChrisCarini/iris-jetbrains-plugin
           - ChrisCarini/jetbrains-auto-power-saver
+          - ChrisCarini/jetbrains-sdk-cleaner
           - ChrisCarini/loc-change-count-detector-jetbrains-plugin
           - ChrisCarini/logshipper-intellij-plugin
           - ChrisCarini/sample-intellij-plugin
