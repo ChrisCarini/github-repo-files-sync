@@ -73,6 +73,7 @@ jobs:
           - ChrisCarini/jetbrains-ide-release-dates
           - ChrisCarini/shodan-exposure-box
           - ChrisCarini/trivia-box
+          - ChrisCarini/unsafe-curl.chriscarini.com
           - ChrisCarini/upptime
           # Private Repos
           - ChrisCarini/fitbit-data-extract

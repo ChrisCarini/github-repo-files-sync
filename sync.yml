@@ -37,6 +37,7 @@ group:
       ChrisCarini/ieee-csdl-downloader
       ChrisCarini/shodan-exposure-box
       ChrisCarini/trivia-box
+      ChrisCarini/unsafe-curl.chriscarini.com
 
   # dependabot config - GitHub Actions
   - files:
