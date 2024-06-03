@@ -143,3 +143,44 @@ jobs:
           EOM
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
+
+  #############################
+  #     SYNC REPO SECRETS     #
+  #############################
+  sync_repo_secrets:
+    name: Repo Secrets
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo:
+          # JetBrains Plugins
+          - ChrisCarini/automatic-github-issue-navigation-configuration-jetbrains-plugin
+          - ChrisCarini/environment-variable-settings-summary-intellij-plugin
+          - ChrisCarini/example-loc-plugin-config-plugin
+          - ChrisCarini/git-push-reminder-jetbrains-plugin
+          - ChrisCarini/intellij-code-exfiltration
+          - ChrisCarini/intellij-notification-sample
+          - ChrisCarini/iris-jetbrains-plugin
+          - ChrisCarini/jetbrains-auto-power-saver
+          - ChrisCarini/jetbrains-sdk-cleaner
+          - ChrisCarini/loc-change-count-detector-jetbrains-plugin
+          - ChrisCarini/logshipper-intellij-plugin
+          - ChrisCarini/sample-intellij-plugin
+    
+    steps:
+      - name: Sync Secrets to [${{ matrix.repo }}]
+        run: |
+          cat <<EOF > .env
+          CERTIFICATE_CHAIN="${{ secrets.CERTIFICATE_CHAIN }}"
+          GH_PAT_REPO_SCOPE_FOR_ACTIONS_THAT_OPEN_PRS="${{ secrets.GH_PAT_REPO_SCOPE_FOR_ACTIONS_THAT_OPEN_PRS }}"
+          GH_PAT_REPO_WORKFLOW_SCOPE="${{ secrets.GH_PAT_REPO_WORKFLOW_SCOPE }}"
+          PAT_TOKEN_FOR_IJ_UPDATE_ACTION="${{ secrets.PAT_TOKEN_FOR_IJ_UPDATE_ACTION }}"
+          PRIVATE_KEY="${{ secrets.PRIVATE_KEY }}"
+          PRIVATE_KEY_PASSWORD="${{ secrets.PRIVATE_KEY_PASSWORD }}"
+          PUBLISH_TOKEN="${{ secrets.PUBLISH_TOKEN }}"
+          EOF
+          gh secret set --repo ${{ matrix.repo }} --env-file .env
+          rm .env
+          
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
