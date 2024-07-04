@@ -6,6 +6,8 @@ group:
   - files:
       - source: dependabot/dependabot-gradle-and-github-actions.yml
         dest: .github/dependabot.yml
+      - source: github/workflows/dependabot-auto-merge.yml
+        dest: .github/workflows/dependabot-auto-merge.yml
     # Place `ChrisCarini/sample-intellij-plugin` first as it is a test repo and typically we want to look at this PR first.
     repos: |
       ChrisCarini/sample-intellij-plugin
@@ -25,6 +27,8 @@ group:
   - files:
       - source: dependabot/dependabot-gradle-and-github-actions-plus-bansalsulabh.yml
         dest: .github/dependabot.yml
+      - source: github/workflows/dependabot-auto-merge.yml
+        dest: .github/workflows/dependabot-auto-merge.yml
     repos: |
       ChrisCarini/example-loc-plugin-config-plugin
       ChrisCarini/loc-change-count-detector-jetbrains-plugin
@@ -33,6 +37,8 @@ group:
   - files:
       - source: dependabot/dependabot-pip-and-github-actions.yml
         dest: .github/dependabot.yml
+      - source: github/workflows/dependabot-auto-merge.yml
+        dest: .github/workflows/dependabot-auto-merge.yml
     repos: |
       ChrisCarini/fitbit-data-extract
       ChrisCarini/ieee-csdl-downloader
@@ -44,6 +50,8 @@ group:
   - files:
       - source: dependabot/dependabot-github-actions.yml
         dest: .github/dependabot.yml
+      - source: github/workflows/dependabot-auto-merge.yml
+        dest: .github/workflows/dependabot-auto-merge.yml
     repos: |
       ChrisCarini/jetbrains-ide-release-dates
       ChrisCarini/upptime
