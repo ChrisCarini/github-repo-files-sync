@@ -40,10 +40,12 @@ group:
       - source: github/workflows/dependabot-auto-merge.yml
         dest: .github/workflows/dependabot-auto-merge.yml
     repos: |
+      ChrisCarini/crypto-to-influxdb
       ChrisCarini/fitbit-data-extract
       ChrisCarini/ieee-csdl-downloader
       ChrisCarini/shodan-exposure-box
       ChrisCarini/skypi
+      ChrisCarini/speedtest-to-gsheet
       ChrisCarini/trivia-box
       ChrisCarini/unsafe-curl.chriscarini.com
 
