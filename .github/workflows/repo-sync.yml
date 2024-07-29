@@ -71,6 +71,7 @@ jobs:
           - ChrisCarini/github-repo-files-sync
           - ChrisCarini/ieee-csdl-downloader
           - ChrisCarini/jetbrains-ide-release-dates
+          - ChrisCarini/repo-file-sync-action
           - ChrisCarini/shodan-exposure-box
           - ChrisCarini/trivia-box
           - ChrisCarini/unsafe-curl.chriscarini.com
@@ -167,7 +168,7 @@ jobs:
           - ChrisCarini/loc-change-count-detector-jetbrains-plugin
           - ChrisCarini/logshipper-intellij-plugin
           - ChrisCarini/sample-intellij-plugin
-    
+
     steps:
       - name: Sync Secrets to [${{ matrix.repo }}]
         run: |
@@ -182,6 +183,6 @@ jobs:
           EOF
           gh secret set --repo ${{ matrix.repo }} --env-file .env
           rm .env
-          
+
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
