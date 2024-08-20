@@ -108,9 +108,11 @@ group:
       # JetBrains Plugin - Update Platform Version
       - source: github/workflows/jetbrains-update-plugin-platform-version.yml
         dest: .github/workflows/update-plugin-platform-version.yml
-      # JetBrains Plugin - Standard JetBrains build.gradle
-      - source: gradle/standard_jetbrains_plugin/build.gradle
-        dest: build_standard_jetbrains_plugin_build.gradle
+      # JetBrains Plugin - Standard JetBrains build.gradle.kts 'Gradle Kotlin conventions plugin'
+      - source: gradle/standard_jetbrains_plugin/build.gradle.kts
+        dest: buildSrc/build.gradle.kts
+      - source: gradle/standard_jetbrains_plugin/buildSrc/src/main/kotlin/build-standard-jetbrains-plugin-build.gradle.kts
+        dest: buildSrc/src/main/kotlin/build-standard-jetbrains-plugin-build.gradle.kts
     # Place `ChrisCarini/sample-intellij-plugin` first as it is a test repo and typically we want to look at this PR first.
     repos: |
       ChrisCarini/sample-intellij-plugin
