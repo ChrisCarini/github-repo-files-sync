@@ -66,6 +66,7 @@ jobs:
           - ChrisCarini/jetbrains-sdk-cleaner
           - ChrisCarini/loc-change-count-detector-jetbrains-plugin
           - ChrisCarini/logshipper-intellij-plugin
+          - ChrisCarini/rust-analyzer-lsp-intellij-plugin
           - ChrisCarini/sample-intellij-plugin
           # Misc Repos
           - ChrisCarini/github-repo-files-sync
@@ -113,6 +114,7 @@ jobs:
           - ChrisCarini/jetbrains-sdk-cleaner
           - ChrisCarini/loc-change-count-detector-jetbrains-plugin
           - ChrisCarini/logshipper-intellij-plugin
+#          - ChrisCarini/rust-analyzer-lsp-intellij-plugin  # Can not add branch protection rules for private repos.
           - ChrisCarini/sample-intellij-plugin
 
     steps:
@@ -167,6 +169,7 @@ jobs:
           - ChrisCarini/jetbrains-sdk-cleaner
           - ChrisCarini/loc-change-count-detector-jetbrains-plugin
           - ChrisCarini/logshipper-intellij-plugin
+          - ChrisCarini/rust-analyzer-lsp-intellij-plugin
           - ChrisCarini/sample-intellij-plugin
 
     steps:

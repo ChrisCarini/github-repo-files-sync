@@ -81,6 +81,7 @@ group:
       ChrisCarini/jetbrains-error-utils
       ChrisCarini/jetbrains-sdk-cleaner
       ChrisCarini/logshipper-intellij-plugin
+      ChrisCarini/rust-analyzer-lsp-intellij-plugin
   # Update Gradle Wrapper (+ reviewer `bansalsulabh`)
   - files:
       - source: github/workflows/update-gradle-wrapper-bansalsulabh.yml
@@ -128,6 +129,7 @@ group:
       ChrisCarini/jetbrains-sdk-cleaner
       ChrisCarini/loc-change-count-detector-jetbrains-plugin
       ChrisCarini/logshipper-intellij-plugin
+      ChrisCarini/rust-analyzer-lsp-intellij-plugin
   ##################################################
   #   JetBrains Plugin - OSSF Scorecard Analysis   #
   ##################################################
@@ -151,3 +153,4 @@ group:
       ChrisCarini/jetbrains-sdk-cleaner
       ChrisCarini/loc-change-count-detector-jetbrains-plugin
       ChrisCarini/logshipper-intellij-plugin
+      ChrisCarini/rust-analyzer-lsp-intellij-plugin
