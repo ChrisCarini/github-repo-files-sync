@@ -83,17 +83,30 @@ jobs:
     steps:
       - name: Sync Repo Settings - ${{ matrix.repo }}
         run: |
+          # Determine repo visibility (public/private)
+          IS_PRIVATE=$(gh api /repos/${{ matrix.repo }} --jq '.private')
+          echo "Repo ${{ matrix.repo }} is private: $IS_PRIVATE"
+          
+          # Set values based on visibility
+          HAS_WIKI=$([ "$IS_PRIVATE" = true ] && echo "false" || echo "true")
+          ALLOW_AUTO_MERGE=$([ "$IS_PRIVATE" = true ] && echo "false" || echo "true")
+          echo "Setting ALLOW_AUTO_MERGE to $ALLOW_AUTO_MERGE"
+          echo "Setting HAS_WIKI to $HAS_WIKI"
+          
+          # Link: https://github.com/${{ matrix.repo }}/settings
+          echo "Updating Repo General settings..."
           gh api /repos/${{ matrix.repo }} \
             --method PATCH \
             -H "Accept: application/vnd.github+json" \
             -F has_issues=true \
             -F has_projects=true \
-            -F has_wiki=$([[ "$(gh api /repos/${{ matrix.repo }} --jq '.private')" = true ]] && echo "false" || echo "true") \
+            -F has_wiki="$HAS_WIKI" \
             -F allow_merge_commit=false \
             -F allow_squash_merge=true \
             -F allow_rebase_merge=false \
-            -F allow_auto_merge=$([[ "$(gh api /repos/${{ matrix.repo }} --jq '.private')" = true ]] && echo "false" || echo "true") \
+            -F allow_auto_merge="$ALLOW_AUTO_MERGE" \
             -F delete_branch_on_merge=true
+          echo "Done."
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
 
