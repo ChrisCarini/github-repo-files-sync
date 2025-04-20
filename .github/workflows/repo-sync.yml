@@ -107,6 +107,15 @@ jobs:
             -F allow_auto_merge="$ALLOW_AUTO_MERGE" \
             -F delete_branch_on_merge=true
           echo "Done."
+          
+          # Link: https://github.com/${{ matrix.repo }}/settings/actions ('Workflow permissions' section)
+          echo "Update Repo GHA 'Workflow permissions' settings (Actions -> General -> Workflow permissions)..."
+          gh api /repos/${{ matrix.repo }}/actions/permissions/workflow \
+            --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            -F default_workflow_permissions=write \
+            -F can_approve_pull_request_reviews=true
+          echo "Done."
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
 
