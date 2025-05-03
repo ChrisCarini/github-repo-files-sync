@@ -1,0 +1,4 @@
+gradle/standard_jetbrains_plugin/.gradle
+gradle/standard_jetbrains_plugin/build
+gradle/standard_jetbrains_plugin/buildSrc/.gradle
+gradle/standard_jetbrains_plugin/buildSrc/build
