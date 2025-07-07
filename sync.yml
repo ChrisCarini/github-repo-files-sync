@@ -22,6 +22,7 @@ group:
       ChrisCarini/jetbrains-error-utils
       ChrisCarini/jetbrains-sdk-cleaner
       ChrisCarini/logshipper-intellij-plugin
+      ChrisCarini/rust-analyzer-lsp-intellij-plugin
 
   # dependabot config - Gradle + GitHub Actions (+ reviewer `bansalsulabh`)
   - files:
