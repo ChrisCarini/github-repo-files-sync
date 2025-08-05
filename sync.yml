@@ -14,6 +14,7 @@ group:
       
       ChrisCarini/automatic-github-issue-navigation-configuration-jetbrains-plugin
       ChrisCarini/environment-variable-settings-summary-intellij-plugin
+      ChrisCarini/example-loc-plugin-config-plugin
       ChrisCarini/git-push-reminder-jetbrains-plugin
       ChrisCarini/intellij-code-exfiltration      
       ChrisCarini/intellij-notification-sample
@@ -21,18 +22,9 @@ group:
       ChrisCarini/jetbrains-auto-power-saver
       ChrisCarini/jetbrains-error-utils
       ChrisCarini/jetbrains-sdk-cleaner
+      ChrisCarini/loc-change-count-detector-jetbrains-plugin
       ChrisCarini/logshipper-intellij-plugin
       ChrisCarini/rust-analyzer-lsp-intellij-plugin
-
-  # dependabot config - Gradle + GitHub Actions (+ reviewer `bansalsulabh`)
-  - files:
-      - source: dependabot/dependabot-gradle-and-github-actions-plus-bansalsulabh.yml
-        dest: .github/dependabot.yml
-      - source: github/workflows/dependabot-auto-merge.yml
-        dest: .github/workflows/dependabot-auto-merge.yml
-    repos: |
-      ChrisCarini/example-loc-plugin-config-plugin
-      ChrisCarini/loc-change-count-detector-jetbrains-plugin
 
   # dependabot config - pip (Python) + GitHub Actions
   - files:
