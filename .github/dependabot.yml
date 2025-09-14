@@ -11,17 +11,11 @@ updates:
     reviewers:
       - ChrisCarini
 
-  # Maintain dependencies for GitHub Actions (for **other** repos' workflow files)
+  # Maintain dependencies for GitHub Actions (for **this** repo's workflow files & **other** repos' workflow files)
   - package-ecosystem: "github-actions"
-    directory: "/github/workflows/"
-    schedule:
-      interval: "daily"
-    reviewers:
-      - ChrisCarini
-
-  # Maintain dependencies for GitHub Actions (for **this** repo's workflow files)
-  - package-ecosystem: "github-actions"
-    directory: "/"
+    directories:
+      - "/github/workflows/" # Maintain dependencies for GitHub Actions (for **other** repos' workflow files)
+      - "/"                  # Maintain dependencies for GitHub Actions (for **this** repo's workflow files)
     schedule:
       interval: "daily"
     reviewers:

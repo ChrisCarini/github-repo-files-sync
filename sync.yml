@@ -99,6 +99,9 @@ group:
       # JetBrains Plugin - Release
       - source: github/workflows/jetbrains-release.yml
         dest: .github/workflows/release.yml
+      # JetBrains Plugin - Dependency Submission and Review
+      - source: github/workflows/jetbrains-dependency-submission-and-review.yml
+        dest: .github/workflows/dependency-submission-and-review.yml
       # JetBrains Plugin - Update Platform Version
       - source: github/workflows/jetbrains-update-plugin-platform-version.yml
         dest: .github/workflows/update-plugin-platform-version.yml
