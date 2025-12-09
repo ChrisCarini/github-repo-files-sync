@@ -193,6 +193,9 @@ jobs:
           - ChrisCarini/rust-analyzer-lsp-intellij-plugin
           - ChrisCarini/sample-intellij-plugin
 
+          # Other
+          - ChrisCarini/github-pull-request-reminder
+
     steps:
       - name: Sync Secrets to [${{ matrix.repo }}]
         run: |
