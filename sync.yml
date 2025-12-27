@@ -2,7 +2,7 @@ group:
   ##################
   #   Dependabot   #
   ##################
-  # dependabot config - Gradle + GitHub Actions
+  # dependabot config - Update: Gradle + GitHub Actions
   - files:
       - source: dependabot/dependabot-gradle-and-github-actions.yml
         dest: .github/dependabot.yml
@@ -26,7 +26,7 @@ group:
       ChrisCarini/logshipper-intellij-plugin
       ChrisCarini/rust-analyzer-lsp-intellij-plugin
 
-  # dependabot config - pip (Python) + GitHub Actions
+  # dependabot config - Update: pip (Python) + GitHub Actions
   - files:
       - source: dependabot/dependabot-pip-and-github-actions.yml
         dest: .github/dependabot.yml
@@ -42,15 +42,19 @@ group:
       ChrisCarini/trivia-box
       ChrisCarini/unsafe-curl.chriscarini.com
 
-  # dependabot config - GitHub Actions
+  # dependabot config - Update: GitHub Actions
   - files:
       - source: dependabot/dependabot-github-actions.yml
         dest: .github/dependabot.yml
       - source: github/workflows/dependabot-auto-merge.yml
         dest: .github/workflows/dependabot-auto-merge.yml
     repos: |
+      ChrisCarini/gh-test-ij-release-update-action
+      ChrisCarini/github-pull-request-reminder
       ChrisCarini/intellij-platform-plugin-verifier-action
       ChrisCarini/jetbrains-ide-release-dates
+      ChrisCarini/repo-file-sync-action
+      ChrisCarini/set-assignee-reviewer-when-ready
       ChrisCarini/upptime
 
   ######################

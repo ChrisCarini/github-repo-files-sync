@@ -68,11 +68,16 @@ jobs:
           - ChrisCarini/logshipper-intellij-plugin
           - ChrisCarini/rust-analyzer-lsp-intellij-plugin
           - ChrisCarini/sample-intellij-plugin
+          # GitHub Actions
+          - ChrisCarini/gh-test-ij-release-update-action
+          - ChrisCarini/github-pull-request-reminder
+          - ChrisCarini/intellij-platform-plugin-verifier-action
+          - ChrisCarini/repo-file-sync-action
+          - ChrisCarini/set-assignee-reviewer-when-ready
           # Misc Repos
           - ChrisCarini/github-repo-files-sync
           - ChrisCarini/ieee-csdl-downloader
           - ChrisCarini/jetbrains-ide-release-dates
-          - ChrisCarini/repo-file-sync-action
           - ChrisCarini/shodan-exposure-box
           - ChrisCarini/trivia-box
           - ChrisCarini/unsafe-curl.chriscarini.com
@@ -192,9 +197,6 @@ jobs:
           - ChrisCarini/logshipper-intellij-plugin
           - ChrisCarini/rust-analyzer-lsp-intellij-plugin
           - ChrisCarini/sample-intellij-plugin
-
-          # Other
-          - ChrisCarini/github-pull-request-reminder
 
     steps:
       - name: Sync Secrets to [${{ matrix.repo }}]
