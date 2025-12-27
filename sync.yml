@@ -42,6 +42,18 @@ group:
       ChrisCarini/trivia-box
       ChrisCarini/unsafe-curl.chriscarini.com
 
+  # dependabot config - Update: npm (JS/TS for GHA) + GitHub Actions
+  - files:
+      - source: dependabot/dependabot-npm-and-github-actions.yml
+        dest: .github/dependabot.yml
+      - source: github/workflows/dependabot-auto-merge.yml
+        dest: .github/workflows/dependabot-auto-merge.yml
+    repos: |
+      ChrisCarini/gh-test-ij-release-update-action
+      ChrisCarini/github-pull-request-reminder
+      ChrisCarini/repo-file-sync-action
+      ChrisCarini/set-assignee-reviewer-when-ready
+
   # dependabot config - Update: GitHub Actions
   - files:
       - source: dependabot/dependabot-github-actions.yml
@@ -49,12 +61,8 @@ group:
       - source: github/workflows/dependabot-auto-merge.yml
         dest: .github/workflows/dependabot-auto-merge.yml
     repos: |
-      ChrisCarini/gh-test-ij-release-update-action
-      ChrisCarini/github-pull-request-reminder
       ChrisCarini/intellij-platform-plugin-verifier-action
       ChrisCarini/jetbrains-ide-release-dates
-      ChrisCarini/repo-file-sync-action
-      ChrisCarini/set-assignee-reviewer-when-ready
       ChrisCarini/upptime
 
   ######################
