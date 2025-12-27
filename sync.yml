@@ -53,6 +53,19 @@ group:
       ChrisCarini/jetbrains-ide-release-dates
       ChrisCarini/upptime
 
+  ######################
+  #   GitHub Actions   #
+  ######################
+  # Check dist - GitHub Actions
+  - files:
+      - source: github/workflows/github-actions-check-dist.yml
+        dest: .github/workflows/check-dist.yml
+    repos: |
+      ChrisCarini/gh-test-ij-release-update-action
+      ChrisCarini/github-pull-request-reminder
+      ChrisCarini/repo-file-sync-action
+      ChrisCarini/set-assignee-reviewer-when-ready
+
   #############################
   #   Update Gradle Wrapper   #
   #############################
