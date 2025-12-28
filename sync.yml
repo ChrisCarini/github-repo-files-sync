@@ -61,6 +61,7 @@ group:
       - source: github/workflows/dependabot-auto-merge.yml
         dest: .github/workflows/dependabot-auto-merge.yml
     repos: |
+      ChrisCarini/awesome-github-community-health-files
       ChrisCarini/intellij-platform-plugin-verifier-action
       ChrisCarini/jetbrains-ide-release-dates
       ChrisCarini/upptime
