@@ -53,6 +53,7 @@ group:
       ChrisCarini/github-pull-request-reminder
       ChrisCarini/repo-file-sync-action
       ChrisCarini/set-assignee-reviewer-when-ready
+      ChrisCarini/user-metrics-dashboard
 
   # dependabot config - Update: GitHub Actions
   - files:
