@@ -176,8 +176,8 @@ jobs:
   #############################
   #     SYNC REPO SECRETS     #
   #############################
-  sync_repo_secrets:
-    name: Repo Secrets
+  sync_repo_secrets_jetbrains_plugins:
+    name: Repo Secrets - JetBrains Plugins
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -211,6 +211,31 @@ jobs:
           PUBLISH_TOKEN="${{ secrets.PUBLISH_TOKEN }}"
           EOF
           gh secret set --repo ${{ matrix.repo }} --env-file .env
+          rm .env
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT_REPO_SCOPE }}
+
+  sync_repo_secrets_check_dist:
+    name: Repo Secrets - GitHub Actions Repos w/ check-dist.yml
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo:
+          # GitHub Actions Repos
+          - ChrisCarini/gh-test-ij-release-update-action
+          - ChrisCarini/github-pull-request-reminder
+          - ChrisCarini/repo-file-sync-action
+          - ChrisCarini/set-assignee-reviewer-when-ready
+
+    steps:
+      - name: Sync Secrets to [${{ matrix.repo }}]
+        run: |
+          cat <<EOF > .env
+          GH_PAT_REPO_WORKFLOW_SCOPE="${{ secrets.GH_PAT_REPO_WORKFLOW_SCOPE }}"
+          EOF
+          gh secret set --repo ${{ matrix.repo }} --env-file .env
+          gh secret set --repo ${{ matrix.repo }} --env-file .env --app dependabot
           rm .env
 
         env:
