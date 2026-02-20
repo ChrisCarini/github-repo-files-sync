@@ -1,0 +1,34 @@
+name: 'Trigger Update JetBrains Plugin Platform Version'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  trigger-update-plugin-platform-version:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - ChrisCarini/sample-intellij-plugin
+          - ChrisCarini/automatic-github-issue-navigation-configuration-jetbrains-plugin
+          - ChrisCarini/environment-variable-settings-summary-intellij-plugin
+          - ChrisCarini/example-loc-plugin-config-plugin
+          - ChrisCarini/git-push-reminder-jetbrains-plugin
+          - ChrisCarini/intellij-code-exfiltration
+          - ChrisCarini/intellij-notification-sample
+          - ChrisCarini/iris-jetbrains-plugin
+          - ChrisCarini/jetbrains-auto-power-saver
+          - ChrisCarini/jetbrains-sdk-cleaner
+          - ChrisCarini/loc-change-count-detector-jetbrains-plugin
+          - ChrisCarini/logshipper-intellij-plugin
+          - ChrisCarini/rust-analyzer-lsp-intellij-plugin
+    steps:
+      - name: Trigger workflow_dispatch on ${{ matrix.repo }}
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN_FOR_IJ_UPDATE_ACTION }}
+        run: |
+          gh workflow run "Update JetBrains Plugin Platform Version" \
+            --repo "${{ matrix.repo }}" \
+            --ref main
+
