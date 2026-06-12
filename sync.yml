@@ -20,7 +20,6 @@ group:
       ChrisCarini/intellij-notification-sample
       ChrisCarini/iris-jetbrains-plugin
       ChrisCarini/jetbrains-auto-power-saver
-      ChrisCarini/jetbrains-error-utils
       ChrisCarini/jetbrains-sdk-cleaner
       ChrisCarini/loc-change-count-detector-jetbrains-plugin
       ChrisCarini/logshipper-intellij-plugin
@@ -98,7 +97,6 @@ group:
       ChrisCarini/intellij-notification-sample
       ChrisCarini/iris-jetbrains-plugin
       ChrisCarini/jetbrains-auto-power-saver
-      ChrisCarini/jetbrains-error-utils
       ChrisCarini/jetbrains-sdk-cleaner
       ChrisCarini/logshipper-intellij-plugin
       ChrisCarini/rust-analyzer-lsp-intellij-plugin
@@ -172,7 +170,6 @@ group:
       ChrisCarini/intellij-notification-sample
       ChrisCarini/iris-jetbrains-plugin
       ChrisCarini/jetbrains-auto-power-saver
-      ChrisCarini/jetbrains-error-utils
       ChrisCarini/jetbrains-sdk-cleaner
       ChrisCarini/loc-change-count-detector-jetbrains-plugin
       ChrisCarini/logshipper-intellij-plugin
