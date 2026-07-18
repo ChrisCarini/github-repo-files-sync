@@ -16,6 +16,7 @@ group:
       ChrisCarini/environment-variable-settings-summary-intellij-plugin
       ChrisCarini/example-loc-plugin-config-plugin
       ChrisCarini/git-push-reminder-jetbrains-plugin
+      ChrisCarini/ide-feature-usage-tracker-intellij-plugin
       ChrisCarini/intellij-code-exfiltration      
       ChrisCarini/intellij-notification-sample
       ChrisCarini/iris-jetbrains-plugin
@@ -24,6 +25,7 @@ group:
       ChrisCarini/jetbrains-sdk-cleaner
       ChrisCarini/loc-change-count-detector-jetbrains-plugin
       ChrisCarini/logshipper-intellij-plugin
+      ChrisCarini/rubber-duck-debugger-intellij-plugin
       ChrisCarini/rust-analyzer-lsp-intellij-plugin
 
   # dependabot config - Update: pip (Python) + GitHub Actions
@@ -93,14 +95,18 @@ group:
       
       ChrisCarini/automatic-github-issue-navigation-configuration-jetbrains-plugin
       ChrisCarini/environment-variable-settings-summary-intellij-plugin
+      ChrisCarini/example-loc-plugin-config-plugin
       ChrisCarini/git-push-reminder-jetbrains-plugin
+      ChrisCarini/ide-feature-usage-tracker-intellij-plugin
       ChrisCarini/intellij-code-exfiltration      
       ChrisCarini/intellij-notification-sample
       ChrisCarini/iris-jetbrains-plugin
       ChrisCarini/jetbrains-auto-power-saver
       ChrisCarini/jetbrains-error-utils
       ChrisCarini/jetbrains-sdk-cleaner
+      ChrisCarini/loc-change-count-detector-jetbrains-plugin
       ChrisCarini/logshipper-intellij-plugin
+      ChrisCarini/rubber-duck-debugger-intellij-plugin
       ChrisCarini/rust-analyzer-lsp-intellij-plugin
   # Update Gradle Wrapper (+ reviewer `bansalsulabh`)
   - files:
@@ -145,6 +151,7 @@ group:
       ChrisCarini/environment-variable-settings-summary-intellij-plugin
       ChrisCarini/example-loc-plugin-config-plugin
       ChrisCarini/git-push-reminder-jetbrains-plugin
+      ChrisCarini/ide-feature-usage-tracker-intellij-plugin
       ChrisCarini/intellij-code-exfiltration      
       ChrisCarini/intellij-notification-sample
       ChrisCarini/iris-jetbrains-plugin
@@ -152,6 +159,7 @@ group:
       ChrisCarini/jetbrains-sdk-cleaner
       ChrisCarini/loc-change-count-detector-jetbrains-plugin
       ChrisCarini/logshipper-intellij-plugin
+      ChrisCarini/rubber-duck-debugger-intellij-plugin
       ChrisCarini/rust-analyzer-lsp-intellij-plugin
   ##################################################
   #   JetBrains Plugin - OSSF Scorecard Analysis   #
@@ -168,6 +176,7 @@ group:
       ChrisCarini/environment-variable-settings-summary-intellij-plugin
       ChrisCarini/example-loc-plugin-config-plugin
       ChrisCarini/git-push-reminder-jetbrains-plugin
+      ChrisCarini/ide-feature-usage-tracker-intellij-plugin
       ChrisCarini/intellij-code-exfiltration      
       ChrisCarini/intellij-notification-sample
       ChrisCarini/iris-jetbrains-plugin
@@ -176,4 +185,5 @@ group:
       ChrisCarini/jetbrains-sdk-cleaner
       ChrisCarini/loc-change-count-detector-jetbrains-plugin
       ChrisCarini/logshipper-intellij-plugin
+      ChrisCarini/rubber-duck-debugger-intellij-plugin
       ChrisCarini/rust-analyzer-lsp-intellij-plugin

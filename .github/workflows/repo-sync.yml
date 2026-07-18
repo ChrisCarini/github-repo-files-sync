@@ -59,6 +59,7 @@ jobs:
           - ChrisCarini/environment-variable-settings-summary-intellij-plugin
           - ChrisCarini/example-loc-plugin-config-plugin
           - ChrisCarini/git-push-reminder-jetbrains-plugin
+          - ChrisCarini/ide-feature-usage-tracker-intellij-plugin
           - ChrisCarini/intellij-code-exfiltration
           - ChrisCarini/intellij-notification-sample
           - ChrisCarini/iris-jetbrains-plugin
@@ -66,6 +67,7 @@ jobs:
           - ChrisCarini/jetbrains-sdk-cleaner
           - ChrisCarini/loc-change-count-detector-jetbrains-plugin
           - ChrisCarini/logshipper-intellij-plugin
+          - ChrisCarini/rubber-duck-debugger-intellij-plugin
           - ChrisCarini/rust-analyzer-lsp-intellij-plugin
           - ChrisCarini/sample-intellij-plugin
           # GitHub Actions
@@ -134,6 +136,7 @@ jobs:
           - ChrisCarini/environment-variable-settings-summary-intellij-plugin
           - ChrisCarini/example-loc-plugin-config-plugin
           - ChrisCarini/git-push-reminder-jetbrains-plugin
+          - ChrisCarini/ide-feature-usage-tracker-intellij-plugin
           - ChrisCarini/intellij-code-exfiltration
           - ChrisCarini/intellij-notification-sample
           - ChrisCarini/iris-jetbrains-plugin
@@ -141,6 +144,7 @@ jobs:
           - ChrisCarini/jetbrains-sdk-cleaner
           - ChrisCarini/loc-change-count-detector-jetbrains-plugin
           - ChrisCarini/logshipper-intellij-plugin
+          - ChrisCarini/rubber-duck-debugger-intellij-plugin
           - ChrisCarini/rust-analyzer-lsp-intellij-plugin
           - ChrisCarini/sample-intellij-plugin
 
@@ -187,6 +191,7 @@ jobs:
           - ChrisCarini/environment-variable-settings-summary-intellij-plugin
           - ChrisCarini/example-loc-plugin-config-plugin
           - ChrisCarini/git-push-reminder-jetbrains-plugin
+          - ChrisCarini/ide-feature-usage-tracker-intellij-plugin
           - ChrisCarini/intellij-code-exfiltration
           - ChrisCarini/intellij-notification-sample
           - ChrisCarini/iris-jetbrains-plugin
@@ -195,6 +200,7 @@ jobs:
           - ChrisCarini/jetbrains-sdk-cleaner
           - ChrisCarini/loc-change-count-detector-jetbrains-plugin
           - ChrisCarini/logshipper-intellij-plugin
+          - ChrisCarini/rubber-duck-debugger-intellij-plugin
           - ChrisCarini/rust-analyzer-lsp-intellij-plugin
           - ChrisCarini/sample-intellij-plugin
 
