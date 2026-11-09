@@ -28,6 +28,15 @@ group:
       ChrisCarini/rubber-duck-debugger-intellij-plugin
       ChrisCarini/rust-analyzer-lsp-intellij-plugin
 
+  # dependabot config - Update: npm + pip + GitHub Actions
+  - files:
+      - source: dependabot/dependabot-npm-pip-and-github-actions.yml
+        dest: .github/dependabot.yml
+      - source: github/workflows/dependabot-auto-merge.yml
+        dest: .github/workflows/dependabot-auto-merge.yml
+    repos: |
+      ChrisCarini/public-ips      
+
   # dependabot config - Update: pip (Python) + GitHub Actions
   - files:
       - source: dependabot/dependabot-pip-and-github-actions.yml
