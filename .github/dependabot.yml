@@ -10,6 +10,17 @@ updates:
       interval: "daily"
     reviewers:
       - ChrisCarini
+    ignore:
+      # `org.mockito:mockito-core` & `org.testng:testng` are declared in the
+      # `buildSrc/src/main/kotlin/build-standard-jetbrains-plugin-build.gradle.kts`
+      # precompiled script plugin. Dependabot's Gradle updater cannot write
+      # updates back to dependencies declared in precompiled script plugins
+      # (see https://github.com/dependabot/dependabot-core/issues/3288), which
+      # causes every update job to fail with `dependency_file_not_resolvable`.
+      # Ignore these until upstream support exists (or the dependencies are
+      # moved to a build file Dependabot can update).
+      - dependency-name: "org.mockito:mockito-core"
+      - dependency-name: "org.testng:testng"
 
   # Maintain dependencies for GitHub Actions (for **this** repo's workflow files & **other** repos' workflow files)
   - package-ecosystem: "github-actions"
